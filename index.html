@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Slash Arena</title>  
+    <script type="text/javascript" src="./js/libs/jquery.js"></script>
+    <script type="text/javascript" src="./js/libs/phaser3.js"></script>
+    <script type="text/javascript" src="./js/libs/lodash.js"></script>
+    <script type="text/javascript" src="./js/libs/pathfinding-browser.js"></script>
+    <script type="text/javascript" src="./data/animals.js"></script>
+    <script type="text/javascript" src="./js/classes/player.js"></script>
+    <script type="text/javascript" src="./js/classes/hud.js"></script>
+    <script type="text/javascript" src="./js/classes/minimap.js"></script>
+    <script type="text/javascript" src="./js/classes/skillOption.js"></script>
+    <script type="text/javascript" src="./js/classes/attackDemo.js"></script>
+    <script type="text/javascript" src="./js/classes/skillDemo.js"></script>
+    <script type="text/javascript" src="./js/classes/charOption.js"></script>
+    <script type="text/javascript" src="./js/classes/button.js"></script>
+    <script type="text/javascript" src="./js/classes/preloader.js"></script>
+    <script type="text/javascript" src="./js/classes/popup.js"></script>
+    <script type="text/javascript" src="./js/classes/enemy.js"></script>
+    <script type="text/javascript" src="./js/classes/enemies/bigBlob.js"></script>
+    <script type="text/javascript" src="./js/classes/enemies/blob.js"></script>
+    <script type="text/javascript" src="./js/classes/enemies/bull.js"></script>
+    <script type="text/javascript" src="./js/classes/enemies/spore.js"></script>
+    <script type="text/javascript" src="./js/classes/enemies/mimic.js"></script>
+    <script type="text/javascript" src="./js/classes/enemies/mage.js"></script>
+    <script type="text/javascript" src="./js/classes/enemies/iceTotem.js"></script>
+    <script type="text/javascript" src="./js/classes/orbAnimation.js"></script>
+    <script type="text/javascript" src="./js/classes/orbAnimationMock.js"></script>
+    <script type="text/javascript" src="./js/classes/healAnimation.js"></script>
+    <script type="text/javascript" src="./js/classes/healAnimationMock.js"></script>
+    <script type="text/javascript" src="./js/classes/fireballAnimation.js"></script>
+    <script type="text/javascript" src="./js/classes/fireballAnimationMock.js"></script>
+    <script type="text/javascript" src="./js/classes/enemyProjectile.js"></script>
+    <script type="text/javascript" src="./js/classes/mageFireball.js"></script>
+    <script type="text/javascript" src="./js/classes/sporeBullet.js"></script>
+    <script type="text/javascript" src="./js/classes/projectile.js"></script>
+    <script type="text/javascript" src="./js/classes/orb.js"></script>
+    <script type="text/javascript" src="./js/classes/orbMock.js"></script>
+    <script type="text/javascript" src="./js/classes/fireball.js"></script>
+    <script type="text/javascript" src="./js/classes/fireballMock.js"></script>
+    <script type="text/javascript" src="./js/classes/drop.js"></script>
+    <script type="text/javascript" src="./js/classes/exp.js"></script>
+    <script type="text/javascript" src="./js/classes/pointDrop.js"></script>
+    <script type="text/javascript" src="./js/classes/healthDrop.js"></script>
+    <script type="text/javascript" src="./js/classes/dayInfo.js"></script>
+    <script type="text/javascript" src="./js/classes/discordButton.js"></script>
+    <script type="text/javascript" src="./js/classes/muteButton.js"></script>
+    <script type="text/javascript" src="./js/classes/pausePanel.js"></script>
+    <script type="text/javascript" src="./js/classes/pauseButton.js"></script>
+    <script type="text/javascript" src="./js/classes/pauseMuteButton.js"></script>
+    <script type="text/javascript" src="./js/classes/deathPanel.js"></script>
+    <script type="text/javascript" src="./js/classes/creditsPanel.js"></script>
+    <script type="text/javascript" src="./js/classes/helpPanel.js"></script>
+    <script type="text/javascript" src="./js/classes/scorePanel.js"></script>
+    <script type="text/javascript" src="./js/classes/scoreItem.js"></script>
+    <script type="text/javascript" src="./js/classes/eodPanel.js"></script>
+    <script type="text/javascript" src="./js/classes/nextDayPanel.js"></script>
+    <script type="text/javascript" src="./js/classes/menuPanel.js"></script>
+    <script type="text/javascript" src="./js/classes/weather.js"></script>
+    <script type="text/javascript" src="./js/classes/musicController.js"></script>
+    <script type="text/javascript" src="./js/classes/soundController.js"></script>
+    <script type="text/javascript" src="./js/scenes/titleScene.js"></script>
+    <script type="text/javascript" src="./js/scenes/gameScene.js"></script>
+    <script type="text/javascript" src="./js/scenes/pauseScene.js"></script>
+    <script type="text/javascript" src="./data/days.js"></script>
+    <script type="text/javascript" src="./js/globals.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+    <script type="text/javascript" src="./js/mapGenerator.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/kongLoader.js"></script>
+    <style media='screen' type='text/css'>
+
+      :root {
+        --cursor: url("./images/cursor.png"), auto;
+      }
+      @font-face {
+        font-family: font1;
+        src: url('./images/font.ttf');
+        font-weight:400;
+        font-weight:normal;
+      }
+
+      input {
+        border: 4px solid #262b44;
+        font-family: font1;
+        text-align: center;
+        font-size: 22px;
+        text-transform: uppercase;
+        position: fixed;
+        top: 395px;
+        left: 500px;
+      }
+
+      body {
+        cursor: var(--cursor);
+        overflow: hidden;
+      }
+</style>
+  </head>
+  <body oncontextmenu="return false;" style="margin: 0px;">
+    <div id="wrapperContainer">
+      <div id="wrapper" style="width: 1128px; height: 615px"></div>
+    </div>
+    <div style="font-family:font1; position:absolute; left:-1000px; visibility:hidden;">.</div>
+    <div id="highscoreContainer" >
+      <input type="text" id="user" name="user" maxlength="12" style="display: none;"/><br />
+    </div>
+  </body>
+</html>
