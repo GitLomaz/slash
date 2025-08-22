@@ -39,7 +39,7 @@ class DeathPanel extends Popup {
     let start = new Button(100, 220, 150, 40, "Submit", function () {
       $("#user").hide();
       let data = btoa(
-        '{ "name": "' +
+        '{ "game": "arena", "name": "' +
           $("#user").val().toUpperCase() +
           '", "score": ' +
           scene.player.score +
