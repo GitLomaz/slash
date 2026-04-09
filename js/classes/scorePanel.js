@@ -21,7 +21,7 @@ class ScorePanel extends Popup {
     if (submission) {
       $.ajax({
         type: "POST",
-        url: "https://us-dev.nightscapes.io/scores/submitScores.php",
+        url: "https://scores.lomazgames.com/scores",
         data: { data: submission },
         dataType: "json",
         success: function (res) {
@@ -40,7 +40,7 @@ class ScorePanel extends Popup {
       });
     } else {
       $.ajax({
-        url: "https://us-dev.nightscapes.io/scores/submitScores.php?game=arena",
+        url: "https://scores.lomazgames.com/scores?game=arena",
         type: "GET",
         dataType: "json",
         success: function (res) {
